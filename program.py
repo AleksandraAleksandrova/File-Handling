@@ -1,15 +1,13 @@
 def format_text_file(file):
     FILE = open(file, "r+", encoding="utf8")
     text = FILE.read()
-    
-    index = text.find("CHAPTER I.\n")
-    text[index:]
-    index = text.find("THE END \n")
-    text[:index]
-    
-    print(text)
+
+    #text = text[text.find("CHAPTER XII.   Alice’s Evidence"):]
+    text = text[:text.find("*** END OF THE PROJECT GUTENBERG EBOOK ALICE’S ADVENTURES IN WONDERLAND ***")]
 
     FILE.close()
+
+    return(text)
 
 def add_to_res_file(num_of_lines, num_of_chars):
     file = open("results.txt", "w")
@@ -53,7 +51,8 @@ def get_info(file):
             characters +=1
         lines +=1
 
-format_text_file("text.txt")
+text = format_text_file("text.txt")
+print(text)
 #num_of_lines = find_num_of_lines("text.txt")
 #num_of_chars = find_num_of_chars("text.txt")
 #add_to_res_file(num_of_lines, num_of_chars)
