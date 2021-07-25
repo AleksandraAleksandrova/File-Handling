@@ -14,7 +14,7 @@ def add_to_res_file(num_of_lines, num_of_chars):
     
     file.write("Number of lines: ")
     file.write(str(num_of_lines))
-
+    file.write("\n")
     file.write("Number of characters: ")
     file.write(str(num_of_chars))
 
@@ -44,14 +44,8 @@ def get_info(file):
     characters = 0
     lines = 0
     FILE = open(data, "r")
-    #във for цикъл да се броят всички линии и знаци
-    text = FILE.read()
-    for char in text:
-        if char != "\n":
-            characters +=1
-        lines +=1
 
-format_text_file("short_text.txt")
-#num_of_lines = find_num_of_lines("text.txt")
-#num_of_chars = find_num_of_chars("text.txt")
-#add_to_res_file(num_of_lines, num_of_chars)
+format_text_file("text copy.txt")
+num_of_lines = find_num_of_lines("text copy.txt")
+num_of_chars = find_num_of_chars("text copy.txt")
+add_to_res_file(num_of_lines, num_of_chars)
