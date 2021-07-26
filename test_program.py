@@ -6,19 +6,17 @@ def get_info(file):
     res = open("test_results.txt", "a", encoding="utf8")
 
     for line in FILE:
-        #liniq po liniq
         if line.find("CHAPTER") == 1:
-            #ako e nova glava resetira line i broi glavite
+            #ne vliza tuk nikoga
             chapter += 1
             lines = 1
-        characters = len(line) #broi znacite
-        lines+=1 #broi redovete
+        characters = len(line) 
+        lines+=1 
 
-        #printira v terminala
         print("Chapter " + str(chapter) + " - line " + str(lines) + " - symbols " + str(characters) + "\n")
-        #slaga v results.txt
         res.write("Chapter " + str(chapter) + " - line " + str(lines) + " - symbols " + str(characters) + "\n")
 
     FILE.close()
     res.close()
 
+get_info("short_text.txt")

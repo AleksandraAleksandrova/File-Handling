@@ -10,16 +10,16 @@ def format_text_file(file):
     FILE.close()
 
 def add_to_res_file(num_of_lines, num_of_chars):
-    file = open("results.txt", "w")
+    FILE = open("results.txt", "w")
     
-    file.write("Number of lines: ")
-    file.write(str(num_of_lines))
-    file.write("\n")
-    file.write("Number of characters: ")
-    file.write(str(num_of_chars))
-    file.write("\n")
+    FILE.write("Number of lines: ")
+    FILE.write(str(num_of_lines))
+    FILE.write("\n")
+    FILE.write("Number of characters: ")
+    FILE.write(str(num_of_chars))
+    FILE.write("\n")
 
-    file.close()
+    FILE.close()
 
 def find_num_of_lines(file):
     num_of_lines = 0
@@ -67,7 +67,6 @@ def get_info(file):
     FILE.close()
     res.close()
             
-
 #format_text_file("text copy.txt")
 #num_of_lines = find_num_of_lines("text copy.txt")
 #num_of_chars = find_num_of_chars("text copy.txt")
