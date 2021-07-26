@@ -63,8 +63,8 @@ def get_info(file):
     FILE.close()
     res.close()
             
-#format_text_file("text copy.txt")
-#num_of_lines = find_num_of_lines("text copy.txt")
-#num_of_chars = find_num_of_chars("text copy.txt")
-#add_to_res_file(num_of_lines, num_of_chars)
-#get_info("text.txt")
+format_text_file("text copy.txt")
+num_of_lines = find_num_of_lines("text copy.txt")
+num_of_chars = find_num_of_chars("text copy.txt")
+add_to_res_file(num_of_lines, num_of_chars)
+get_info("text copy.txt")
