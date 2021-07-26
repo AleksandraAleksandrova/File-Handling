@@ -17,6 +17,9 @@ def add_to_res_file(num_of_lines, num_of_chars):
     file.write("\n")
     file.write("Number of characters: ")
     file.write(str(num_of_chars))
+    file.write("\n")
+
+    file.close()
 
 def find_num_of_lines(file):
     num_of_lines = 0
@@ -43,9 +46,30 @@ def find_num_of_chars(file):
 def get_info(file):
     characters = 0
     lines = 0
-    FILE = open(data, "r")
+    chapter = 0
+    FILE = open(file, "r+", encoding="utf8")
+    res = open("results.txt", "a", encoding="utf8")
 
-format_text_file("text copy.txt")
-num_of_lines = find_num_of_lines("text copy.txt")
-num_of_chars = find_num_of_chars("text copy.txt")
-add_to_res_file(num_of_lines, num_of_chars)
+    for line in FILE:
+        #liniq po liniq
+        if line.find("CHAPTER") == 1:
+            #ako e nova glava resetira line i broi glavite
+            chapter += 1
+            lines = 1
+        characters = len(line) #broi znacite
+        lines+=1 #broi redovete
+
+        #printira v terminala
+        print("Chapter " + str(chapter) + " - line " + str(lines) + " - symbols " + str(characters) + "\n")
+        #slaga v results.txt
+        res.write("Chapter " + str(chapter) + " - line " + str(lines) + " - symbols " + str(characters) + "\n")
+
+    FILE.close()
+    res.close()
+            
+
+#format_text_file("text copy.txt")
+#num_of_lines = find_num_of_lines("text copy.txt")
+#num_of_chars = find_num_of_chars("text copy.txt")
+#add_to_res_file(num_of_lines, num_of_chars)
+#get_info("text.txt")
