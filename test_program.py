@@ -6,10 +6,10 @@ def get_info(file):
     res = open("test_results.txt", "a", encoding="utf8")
 
     for line in FILE:
-        if line.find("CHAPTER") == 1:
+        if line.find("CHAPTER") !=-1:
             #ne vliza tuk nikoga
             chapter += 1
-            lines = 1
+            lines = 0
         characters = len(line) 
         lines+=1 
 
