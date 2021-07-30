@@ -1,13 +1,22 @@
-def format_text_file(file):
+import os
+
+def func(file):
     FILE = open(file, "r+", encoding="utf8")
     text = FILE.read()
     text = text[text.find("CHAPTER I.\nDown the Rabbit-Hole"):]
     text = text[:text.find("*** END OF THE PROJECT GUTENBERG EBOOK ALICE’S ADVENTURES IN WONDERLAND ***")]
     FILE.close()
 
-    FILE = open(file, "w", encoding="utf8")
-    FILE.write(text)
-    FILE.close()
+    created = open("temp_text.txt", "w", encoding="utf8")
+    created.write(text)
+    created.close()
+
+    num_of_lines = find_num_of_lines("temp_text.txt")
+    num_of_chars = find_num_of_chars("temp_text.txt")
+    add_to_res_file(num_of_lines, num_of_chars)
+    get_info("temp_text.txt")
+
+    os.remove("temp_text.txt")
 
 def add_to_res_file(num_of_lines, num_of_chars):
     FILE = open("results.txt", "w")
@@ -63,8 +72,4 @@ def get_info(file):
     FILE.close()
     res.close()
             
-format_text_file("text.txt")
-num_of_lines = find_num_of_lines("text.txt")
-num_of_chars = find_num_of_chars("text.txt")
-add_to_res_file(num_of_lines, num_of_chars)
-get_info("text.txt")
+func("text.txt")

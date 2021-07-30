@@ -1,5 +1,5 @@
-Number of lines: 3352
-Number of characters: 144019
+Number of lines: 3355
+Number of characters: 144022
 Chapter 1 - line 1 - symbols 11
 Chapter 1 - line 2 - symbols 21
 Chapter 1 - line 3 - symbols 1
@@ -3352,3 +3352,6 @@ Chapter 12 - line 287 - symbols 6
 Chapter 12 - line 288 - symbols 1
 Chapter 12 - line 289 - symbols 9
 Chapter 12 - line 290 - symbols 1
+Chapter 12 - line 291 - symbols 1
+Chapter 12 - line 292 - symbols 1
+Chapter 12 - line 293 - symbols 1
