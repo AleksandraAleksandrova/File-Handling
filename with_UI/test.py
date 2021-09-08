@@ -16,8 +16,6 @@ def get_info(file, chapters):
 
     for line in text.splitlines():
         if line.find("CHAPTER") !=-1:
-            #not working
-            #overwrites 1 with 2 then with 3 in all positions
             chapters[element].number = element + 1
             print(chapters[element].number)
             element = element + 1
